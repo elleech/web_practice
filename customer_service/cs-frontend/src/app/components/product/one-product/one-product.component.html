@@ -1,0 +1,207 @@
+<div class="container">
+  <div class="heading">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h1>
+          Product
+          <span class="display-4">
+            <em>{{ pdtId }}</em>
+          </span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="info">
+    <div class="row">
+      <div class="col-auto">
+        <img
+          src="https://img.icons8.com/doodle/96/000000/touchscreen-smartphone.png"
+        />
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col-2"><h5>Itemname</h5></div>
+          <div class="col">
+            <u>{{ product.itemname }}</u>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2"><h5>Brand</h5></div>
+          <div class="col">
+            <u>{{ product.brand }}</u>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2"><h5>Description</h5></div>
+          <div class="col">
+            <u>{{ product.description }}</u>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2"><h5>Unitprice</h5></div>
+          <div class="col">
+            <u>${{ product.unitprice }}</u>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="history">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h3>Sell History</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto"><h5>#</h5></div>
+      <div class="col-3"><h5>ID</h5></div>
+      <div class="col-2"><h5>[O]rder / [D]eliver</h5></div>
+      <div class="col"><h5>Quantity</h5></div>
+      <div class="col"><h5>Total</h5></div>
+      <div class="col"><h5>Customer</h5></div>
+      <div class="col"><h5>Salesperson</h5></div>
+    </div>
+    <div *ngFor="let detail of details; index as i">
+      <div class="row" *ngIf="!detail.cancel">
+        <div class="col-auto">{{ i + 1 }}</div>
+        <div class="col-3">{{ detail._buyId }}</div>
+        <div class="col-2">
+          [O] {{ detail.orderDate | date: "mediumDate" }}<br />
+          [D] {{ detail.deliverDate | date: "mediumDate" }}
+        </div>
+        <div class="col">{{ detail.quantity }} pcs</div>
+        <div class="col">${{ detail.quantity * detail.unitprice }}</div>
+        <div class="col">
+          <a [routerLink]="['/customers/lookup', detail.custUsername]">
+            {{ detail.custUsername }}
+          </a>
+        </div>
+        <div class="col">
+          <a [routerLink]="['/salespeople/lookup', detail.saleUsername]">
+            {{ detail.saleUsername }}
+          </a>
+        </div>
+      </div>
+      <div class="row text-muted" *ngIf="detail.cancel">
+        <del class="col-auto">{{ i + 1 }}</del>
+        <del class="col-3">{{ detail._buyId }}</del>
+        <del class="col-2">
+          [O] {{ detail.orderDate | date: "mediumDate" }}<br />
+          [D] {{ detail.deliverDate | date: "mediumDate" }}
+        </del>
+        <del class="col">{{ detail.quantity }} pcs</del>
+        <del class="col"> ${{ detail.quantity * detail.unitprice }} </del>
+        <del class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/customers/lookup', detail.custUsername]"
+          >
+            {{ detail.custUsername }}
+          </a>
+        </del>
+        <del class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/salespeople/lookup', detail.saleUsername]"
+          >
+            {{ detail.saleUsername }}
+          </a>
+        </del>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="history">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h3>Report History</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto">#</div>
+      <div class="col-3"><h5>ID</h5></div>
+      <div class="col-3"><h5>Issue</h5></div>
+      <div class="col-1"><h5>Status</h5></div>
+      <div class="col"><h5>Customer</h5></div>
+      <div class="col"><h5>Employee</h5></div>
+    </div>
+    <div *ngFor="let detail of details; index as i">
+      <div class="row" *ngIf="detail._rptId && !detail.status">
+        <div class="col-auto">{{ i + 1 }}</div>
+        <div class="col-3">{{ detail._rptId }}</div>
+        <div class="col-3">
+          <strong>{{ detail.subject }}</strong>
+          :<br />
+          {{ detail.complaint }}<br />
+          [RES] {{ detail.resolution }}
+        </div>
+        <div class="col-1 text-danger">open</div>
+        <div class="col">
+          <a [routerLink]="['/customers/lookup', detail.custUsername]">
+            {{ detail.custUsername }}
+          </a>
+        </div>
+        <div class="col">
+          <a [routerLink]="['/employees/lookup', detail.emplUsername]">
+            {{ detail.emplUsername }}
+          </a>
+        </div>
+      </div>
+      <div class="row" *ngIf="detail._rptId && detail.status">
+        <div class="col-auto text-muted">{{ i + 1 }}</div>
+        <div class="col-3 text-muted">{{ detail._rptId }}</div>
+        <div class="col-3 text-muted">
+          <strong>{{ detail.subject }}</strong>
+          :<br />
+          {{ detail.complaint }}<br />
+          [RES] {{ detail.resolution }}
+        </div>
+        <div class="col-1 text-success">closed</div>
+        <div class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/customers/lookup', detail.custUsername]"
+          >
+            {{ detail.custUsername }}
+          </a>
+        </div>
+        <div class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/employees/lookup', detail.emplUsername]"
+          >
+            {{ detail.emplUsername }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="button">
+    <div class="row">
+      <div class="col-auto ml-auto">
+        <button type="button" class="btn btn-secondary" (click)="onBack()">
+          BACK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

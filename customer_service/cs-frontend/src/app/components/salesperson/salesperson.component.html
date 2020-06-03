@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="heading">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h1>Salesperson List</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto ml-auto">
+        <button
+          type="button"
+          class="btn btn-sm btn-danger"
+          routerLink="/add"
+          (click)="onCreate()"
+        >
+          ADD NEW
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="salesperson">
+    <div class="row">
+      <div class="col"><h5>Username</h5></div>
+      <div class="col"><h5>Name</h5></div>
+      <div class="col"><h5>Job Title</h5></div>
+      <div class="col"><h5>Location</h5></div>
+      <div class="col"><h5>Phone</h5></div>
+      <div class="col-2"><h5>Email</h5></div>
+      <div class="col"></div>
+    </div>
+    <div class="row" *ngFor="let salesperson of salespeople">
+      <div class="col">{{ salesperson.username }}</div>
+      <div class="col">
+        {{ salesperson.firstname }} {{ salesperson.lastname }}
+      </div>
+      <div class="col">{{ salesperson.jobtitle }}</div>
+      <div class="col">{{ salesperson.location }}</div>
+      <div class="col">{{ salesperson.phone }}</div>
+      <div class="col-2">{{ salesperson.email }}</div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-warning mr-2"
+          title="EDIT"
+          [routerLink]="['/edit', salesperson.username]"
+          (click)="onEdit(salesperson.username)"
+        >
+          <fa-icon [icon]="faEdit"></fa-icon>
+        </button>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-dark mr-2"
+          title="DELETE"
+          (click)="onDelete(salesperson.username)"
+        >
+          <fa-icon [icon]="faTrashAlt"></fa-icon>
+        </button>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-info"
+          title="LOOKUP"
+          [routerLink]="['/lookup', salesperson.username]"
+          (click)="onLookup(salesperson.username)"
+        >
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

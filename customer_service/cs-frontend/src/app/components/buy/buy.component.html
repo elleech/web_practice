@@ -1,0 +1,147 @@
+<div class="container">
+  <div class="heading">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h1>Buy List</h1>
+        <p class="text-info">
+          delete only after cancel, cannot edit once canceled
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto ml-auto">
+        <button
+          class="btn btn-sm btn-danger"
+          routerLink="/add"
+          (click)="onCreate()"
+        >
+          ADD NEW
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="buy">
+    <div class="row">
+      <div class="col-3"><h5>ID</h5></div>
+      <div class="col-2"><h5>Product</h5></div>
+      <div class="col-2"><h5>[O]rder / [D]eliver</h5></div>
+      <div class="col"><h5>Customer</h5></div>
+      <div class="col"><h5>Salesperson</h5></div>
+      <div class="col"></div>
+    </div>
+    <div *ngFor="let detail of details">
+      <div class="row" *ngIf="!detail.cancel">
+        <div class="col-3">{{ detail._buyId }}</div>
+        <div class="col-2">
+          <a [routerLink]="['/products/lookup', detail._pdtId]">
+            {{ detail.brand }} {{ detail.itemname }} </a
+          ><br />
+          {{ detail.quantity }} pcs ${{ detail.quantity * detail.unitprice }}
+        </div>
+        <div class="col-2">
+          [O] {{ detail.orderDate | date: "mediumDate" }}<br />
+          [D] {{ detail.deliverDate | date: "mediumDate" }}
+        </div>
+        <div class="col">
+          <a [routerLink]="['/customers/lookup', detail.custUsername]">
+            {{ detail.custUsername }}
+          </a>
+        </div>
+        <div class="col">
+          <a [routerLink]="['/salespeople/lookup', detail.saleUsername]">
+            {{ detail.saleUsername }}
+          </a>
+        </div>
+        <div class="col">
+          <button
+            class="btn btn-sm btn-outline-warning mr-2"
+            title="EDIT"
+            [routerLink]="['/edit', detail._buyId]"
+            (click)="onEdit(detail._buyId)"
+          >
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button>
+          <button
+            class="btn btn-sm btn-outline-primary mr-2"
+            title="CANCEL"
+            (click)="onCancel(detail._buyId)"
+          >
+            <fa-icon [icon]="faWindowClose"></fa-icon>
+          </button>
+          <button
+            class="btn btn-sm btn-outline-dark"
+            title="DELETE"
+            (click)="onDelete(detail._buyId)"
+            [disabled]="!detail.cancel"
+          >
+            <fa-icon [icon]="faTrashAlt"></fa-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="row text-muted" *ngIf="detail.cancel">
+        <del class="col-3">{{ detail._buyId }}</del>
+        <del class="col-2">
+          <a
+            class="text-muted"
+            [routerLink]="['/products/lookup', detail._pdtId]"
+          >
+            {{ detail.brand }} {{ detail.itemname }} </a
+          ><br />
+          {{ detail.quantity }} pcs ${{ detail.quantity * detail.unitprice }}
+        </del>
+        <del class="col-2">
+          [O] {{ detail.orderDate | date: "mediumDate" }}<br />
+          [D] {{ detail.deliverDate | date: "mediumDate" }}
+        </del>
+        <del class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/customers/lookup', detail.custUsername]"
+          >
+            {{ detail.custUsername }}
+          </a>
+        </del>
+        <del class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/salespeople/lookup', detail.saleUsername]"
+          >
+            {{ detail.saleUsername }}
+          </a>
+        </del>
+        <div class="col">
+          <button
+            class="btn btn-sm btn-outline-warning mr-2"
+            title="EDIT"
+            [routerLink]="['/edit', detail._buyId]"
+            (click)="onEdit(detail._buyId)"
+            [disabled]="detail.cancel"
+          >
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button>
+          <button
+            class="btn btn-sm btn-outline-primary mr-2"
+            title="CANCEL"
+            (click)="onCancel(detail._buyId)"
+            [disabled]="detail.cancel"
+          >
+            <fa-icon [icon]="faWindowClose"></fa-icon>
+          </button>
+          <button
+            class="btn btn-sm btn-outline-dark"
+            title="DELETE"
+            (click)="onDelete(detail._buyId)"
+          >
+            <fa-icon [icon]="faTrashAlt"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button.calendar,
+button.calendar:active {
+  width: 2.75rem;
+  background-image: url("https://img.icons8.com/color/48/000000/calendar.png") !important;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+}

@@ -1,0 +1,262 @@
+<div class="alert alert-success text-center" *ngIf="submitted">
+  Success
+</div>
+
+<div class="alert alert-danger text-center" *ngIf="submitted === false">
+  {{ errorMessage.error }}
+</div>
+
+<div class="container">
+  <form [formGroup]="addSalespersonForm">
+    <div class="row">
+      <div class="form-group col">
+        <small class="text-info">
+          username cannot be altered once submitted
+        </small>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="username"
+          formControlName="username"
+          [class.is-invalid]="
+            addSalespersonForm.get('username').invalid &&
+            addSalespersonForm.get('username').touched
+          "
+        />
+        <div
+          *ngIf="
+            addSalespersonForm.get('username').invalid &&
+            addSalespersonForm.get('username').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('username').errors.required"
+          >
+            username is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('username').errors.minlength"
+          >
+            username must be at least 3 characters
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="firstname"
+          formControlName="firstname"
+          [class.is-invalid]="
+            addSalespersonForm.get('firstname').invalid &&
+            addSalespersonForm.get('firstname').touched
+          "
+        />
+        <div
+          *ngIf="
+            addSalespersonForm.get('firstname').invalid &&
+            addSalespersonForm.get('firstname').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('firstname').errors.required"
+          >
+            firstname is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('firstname').errors.pattern"
+          >
+            firstname must be letters only
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="lastname"
+          formControlName="lastname"
+          [class.is-invalid]="
+            addSalespersonForm.get('lastname').invalid &&
+            addSalespersonForm.get('lastname').touched
+          "
+        />
+        <div
+          *ngIf="
+            addSalespersonForm.get('lastname').invalid &&
+            addSalespersonForm.get('lastname').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('lastname').errors.required"
+          >
+            lastname is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('lastname').errors.pattern"
+          >
+            lastname must be letters only
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="job title"
+          formControlName="jobtitle"
+          [class.is-invalid]="
+            addSalespersonForm.get('jobtitle').invalid &&
+            addSalespersonForm.get('jobtitle').touched
+          "
+        />
+        <div
+          *ngIf="
+            addSalespersonForm.get('jobtitle').invalid &&
+            addSalespersonForm.get('jobtitle').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('jobtitle').errors.required"
+          >
+            job title is required
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="location"
+          formControlName="location"
+          [class.is-invalid]="
+            addSalespersonForm.get('location').invalid &&
+            addSalespersonForm.get('location').touched
+          "
+        />
+        <div
+          *ngIf="
+            addSalespersonForm.get('location').invalid &&
+            addSalespersonForm.get('location').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('location').errors.required"
+          >
+            location is required
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="tel"
+          class="form-control"
+          placeholder="phone"
+          formControlName="phone"
+          maxlength="10"
+          [class.is-invalid]="
+            addSalespersonForm.get('phone').invalid &&
+            addSalespersonForm.get('phone').touched
+          "
+        />
+        <div
+          *ngIf="
+            addSalespersonForm.get('phone').invalid &&
+            addSalespersonForm.get('phone').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('phone').errors.required"
+          >
+            phone is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="
+              addSalespersonForm.get('phone').errors.minlength ||
+              addSalespersonForm.get('phone').errors.pattern
+            "
+          >
+            phone must be 10 digits
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="email"
+          formControlName="email"
+          [class.is-invalid]="
+            addSalespersonForm.get('email').invalid &&
+            addSalespersonForm.get('email').touched
+          "
+        />
+        <div
+          *ngIf="
+            addSalespersonForm.get('email').invalid &&
+            addSalespersonForm.get('email').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('email').errors.required"
+          >
+            email is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="addSalespersonForm.get('email').errors.pattern"
+          >
+            please enter valid email
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="btn-toolbar col-auto ml-auto">
+        <div class="btn-group mr-3">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onSubmit()"
+            [disabled]="!addSalespersonForm.valid"
+          >
+            SUBMIT
+          </button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">
+            CANCEL
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

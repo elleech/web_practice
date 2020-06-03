@@ -1,0 +1,158 @@
+<div class="container">
+  <div class="heading">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h1>
+          Employee
+          <span class="display-4">
+            <em>{{ emplUsername }}</em>
+          </span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="info">
+    <div class="row">
+      <div class="col-auto">
+        <img
+          src="https://img.icons8.com/doodle/96/000000/technical-support.png"
+        />
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col-2"><h5>Name</h5></div>
+          <div class="col">
+            <u>{{ employee.firstname }} {{ employee.lastname }}</u>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2"><h5>Title</h5></div>
+          <div class="col">
+            <u>{{ employee.jobtitle }}</u>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2"><h5>Location</h5></div>
+          <div class="col">
+            <u>{{ employee.location }}</u>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2"><h5>Phone</h5></div>
+          <div class="col">
+            <u>{{ employee.phone }}</u>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2"><h5>Email</h5></div>
+          <div class="col">
+            <u>{{ employee.email }}</u>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="history">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h3>Service History</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto">#</div>
+      <div class="col-3"><h5>ID</h5></div>
+      <div class="col-3"><h5>Issue</h5></div>
+      <div class="col"><h5>Product</h5></div>
+      <div class="col-1"><h5>Status</h5></div>
+      <div class="col"><h5>Customer</h5></div>
+      <div class="col"><h5>Salesperson</h5></div>
+    </div>
+    <div *ngFor="let detail of details; index as i">
+      <div class="row" *ngIf="detail._rptId && !detail.status">
+        <div class="col-auto">{{ i + 1 }}</div>
+        <div class="col-3">{{ detail._rptId }}</div>
+        <div class="col-3">
+          <strong>{{ detail.subject }}</strong>
+          :<br />
+          {{ detail.complaint }}<br />
+          [RES] {{ detail.resolution }}
+        </div>
+        <div class="col">
+          <a [routerLink]="['/products/lookup', detail._pdtId]">
+            {{ detail.brand }}<br />{{ detail.itemname }}
+          </a>
+        </div>
+        <div class="col-1 text-danger">open</div>
+        <div class="col">
+          <a [routerLink]="['/customers/lookup', detail.custUsername]">
+            {{ detail.custUsername }}
+          </a>
+        </div>
+        <div class="col">
+          <a [routerLink]="['/salespeople/lookup', detail.saleUsername]">
+            {{ detail.saleUsername }}
+          </a>
+        </div>
+      </div>
+      <div class="row" *ngIf="detail._rptId && detail.status">
+        <div class="col-auto text-muted">{{ i + 1 }}</div>
+        <div class="col-3 text-muted">{{ detail._rptId }}</div>
+        <div class="col-3 text-muted">
+          <strong>{{ detail.subject }}</strong>
+          :<br />
+          {{ detail.complaint }}<br />
+          [RES] {{ detail.resolution }}
+        </div>
+        <div class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/products/lookup', detail._pdtId]"
+          >
+            {{ detail.brand }}<br />{{ detail.itemname }}
+          </a>
+        </div>
+        <div class="col-1 text-success">closed</div>
+        <div class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/customers/lookup', detail.custUsername]"
+          >
+            {{ detail.custUsername }}
+          </a>
+        </div>
+        <div class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/salespeople/lookup', detail.saleUsername]"
+          >
+            {{ detail.saleUsername }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="button">
+    <div class="row">
+      <div class="col-auto ml-auto">
+        <button type="button" class="btn btn-secondary" (click)="onBack()">
+          BACK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

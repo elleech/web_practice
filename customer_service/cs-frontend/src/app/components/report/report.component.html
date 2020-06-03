@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="heading">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h1>Report List</h1>
+        <p class="text-info">
+          cannot edit once closed
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto ml-auto">
+        <button
+          class="btn btn-sm btn-danger"
+          routerLink="/add"
+          (click)="onCreate()"
+        >
+          ADD NEW
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="detail">
+    <div class="row">
+      <div class="col-3"><h5>ID</h5></div>
+      <div class="col-3"><h5>Issue</h5></div>
+      <div class="col"><h5>Product</h5></div>
+      <div class="col-1"><h5>Status</h5></div>
+      <div class="col"><h5>Employee</h5></div>
+      <div class="col-1"></div>
+    </div>
+    <div *ngFor="let detail of details; index as i">
+      <div class="row" *ngIf="!detail.status">
+        <div class="col-3">{{ detail._rptId }}</div>
+        <div class="col-3">
+          <strong>{{ detail.subject }}</strong>
+          :<br />
+          {{ detail.complaint }}<br />
+          [RES] {{ detail.resolution }}
+        </div>
+        <div class="col">
+          <a [routerLink]="['/products/lookup', detail._pdtId]">
+            {{ detail.brand }} {{ detail.itemname }}
+          </a>
+        </div>
+        <div class="col-1 text-danger">open</div>
+        <div class="col">
+          <a [routerLink]="['/employees/lookup', detail.emplUsername]">
+            {{ detail.emplUsername }}
+          </a>
+        </div>
+        <div class="col-1">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-warning mr-2"
+            title="EDIT"
+            [routerLink]="['/edit', detail._rptId]"
+            (click)="onEdit(detail._rptId)"
+          >
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button>
+        </div>
+      </div>
+      <div class="row" *ngIf="detail.status">
+        <div class="col-3 text-muted">{{ detail._rptId }}</div>
+        <div class="col-3 text-muted">
+          <strong>{{ detail.subject }}</strong>
+          :<br />
+          {{ detail.complaint }}<br />
+          [RES] {{ detail.resolution }}
+        </div>
+        <div class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/products/lookup', detail._pdtId]"
+          >
+            {{ detail.brand }} {{ detail.itemname }}
+          </a>
+        </div>
+        <div class="col-1 text-success">closed</div>
+        <div class="col">
+          <a
+            class="text-muted"
+            [routerLink]="['/employees/lookup', detail.emplUsername]"
+          >
+            {{ detail.emplUsername }}
+          </a>
+        </div>
+        <div class="col-1">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-warning mr-2"
+            title="EDIT"
+            [routerLink]="['/edit', detail._rptId]"
+            (click)="onEdit(detail._rptId)"
+            [disabled]="detail.status"
+          >
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

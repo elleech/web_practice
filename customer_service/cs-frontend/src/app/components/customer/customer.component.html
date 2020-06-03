@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="heading">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h1>Customer List</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto ml-auto">
+        <button
+          type="button"
+          class="btn btn-sm btn-danger"
+          routerLink="/add"
+          (click)="onCreate()"
+        >
+          ADD NEW
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="customer">
+    <div class="row">
+      <div class="col"><h5>Username</h5></div>
+      <div class="col"><h5>Name</h5></div>
+      <div class="col"><h5>Address</h5></div>
+      <div class="col"><h5>Phone</h5></div>
+      <div class="col-2"><h5>Email</h5></div>
+      <div class="col"></div>
+    </div>
+    <div class="row" *ngFor="let customer of customers">
+      <div class="col">{{ customer.username }}</div>
+      <div class="col">{{ customer.firstname }} {{ customer.lastname }}</div>
+      <div class="col">{{ customer.address }}</div>
+      <div class="col">{{ customer.phone }}</div>
+      <div class="col-2">{{ customer.email }}</div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-warning mr-2"
+          title="EDIT"
+          [routerLink]="['/edit', customer.username]"
+          (click)="onEdit(customer.username)"
+        >
+          <fa-icon [icon]="faEdit"></fa-icon>
+        </button>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-dark mr-2"
+          title="DELETE"
+          (click)="onDelete(customer.username)"
+        >
+          <fa-icon [icon]="faTrashAlt"></fa-icon>
+        </button>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-info"
+          title="LOOKUP"
+          [routerLink]="['/lookup', customer.username]"
+          (click)="onLookup(customer.username)"
+        >
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

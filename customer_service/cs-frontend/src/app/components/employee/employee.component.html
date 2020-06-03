@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="heading">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h1>Employee List</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto ml-auto">
+        <button
+          type="button"
+          class="btn btn-sm btn-danger"
+          routerLink="/add"
+          (click)="onCreate()"
+        >
+          ADD NEW
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-spacer></app-spacer>
+
+<div class="container">
+  <div class="employee">
+    <div class="row">
+      <div class="col"><h5>Username</h5></div>
+      <div class="col"><h5>Name</h5></div>
+      <div class="col"><h5>Job Title</h5></div>
+      <div class="col"><h5>Location</h5></div>
+      <div class="col"><h5>Phone</h5></div>
+      <div class="col-2"><h5>Email</h5></div>
+      <div class="col"></div>
+    </div>
+    <div class="row" *ngFor="let employee of employees">
+      <div class="col">{{ employee.username }}</div>
+      <div class="col">{{ employee.firstname }} {{ employee.lastname }}</div>
+      <div class="col">{{ employee.jobtitle }}</div>
+      <div class="col">{{ employee.location }}</div>
+      <div class="col">{{ employee.phone }}</div>
+      <div class="col-2">{{ employee.email }}</div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-warning mr-2"
+          title="EDIT"
+          [routerLink]="['/edit', employee.username]"
+          (click)="onEdit(employee.username)"
+        >
+          <fa-icon [icon]="faEdit"></fa-icon>
+        </button>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-dark mr-2"
+          title="DELETE"
+          (click)="onDelete(employee.username)"
+        >
+          <fa-icon [icon]="faTrashAlt"></fa-icon>
+        </button>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-info"
+          title="LOOKUP"
+          [routerLink]="['/lookup', employee.username]"
+          (click)="onLookup(employee.username)"
+        >
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

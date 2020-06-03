@@ -1,0 +1,244 @@
+<div class="alert alert-success text-center" *ngIf="submitted">
+  Success
+</div>
+
+<div class="alert alert-danger text-center" *ngIf="submitted === false">
+  {{ errorMessage.error }}
+</div>
+
+<div class="container">
+  <form [formGroup]="editSalespersonForm">
+    <div class="row">
+      <div class="form-group col">
+        <small class="text-info">username cannot be altered</small>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="{{ editSalespersonForm.get('username').value }}"
+          value="{{ editSalespersonForm.get('username').value }}"
+          formControlName="username"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="{{ editSalespersonForm.get('firstname').value }}"
+          value="{{ editSalespersonForm.get('firstname').value }}"
+          formControlName="firstname"
+          [class.is-invalid]="
+            editSalespersonForm.get('firstname').invalid &&
+            editSalespersonForm.get('firstname').touched
+          "
+        />
+        <div
+          *ngIf="
+            editSalespersonForm.get('firstname').invalid &&
+            editSalespersonForm.get('firstname').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="editSalespersonForm.get('firstname').errors.required"
+          >
+            firstname is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="editSalespersonForm.get('firstname').errors.pattern"
+          >
+            firstname must be letters only
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="{{ editSalespersonForm.get('lastname').value }}"
+          value="{{ editSalespersonForm.get('lastname').value }}"
+          formControlName="lastname"
+          [class.is-invalid]="
+            editSalespersonForm.get('lastname').invalid &&
+            editSalespersonForm.get('lastname').touched
+          "
+        />
+        <div
+          *ngIf="
+            editSalespersonForm.get('lastname').invalid &&
+            editSalespersonForm.get('lastname').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="editSalespersonForm.get('lastname').errors.required"
+          >
+            lastname is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="editSalespersonForm.get('lastname').errors.pattern"
+          >
+            lastname must be letters only
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="{{ editSalespersonForm.get('jobtitle').value }}"
+          value="{{ editSalespersonForm.get('jobtitle').value }}"
+          formControlName="jobtitle"
+          [class.is-invalid]="
+            editSalespersonForm.get('jobtitle').invalid &&
+            editSalespersonForm.get('jobtitle').touched
+          "
+        />
+        <div
+          *ngIf="
+            editSalespersonForm.get('jobtitle').invalid &&
+            editSalespersonForm.get('jobtitle').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="editSalespersonForm.get('jobtitle').errors.required"
+          >
+            job title is required
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="{{ editSalespersonForm.get('location').value }}"
+          value="{{ editSalespersonForm.get('location').value }}"
+          formControlName="location"
+          [class.is-invalid]="
+            editSalespersonForm.get('location').invalid &&
+            editSalespersonForm.get('location').touched
+          "
+        />
+        <div
+          *ngIf="
+            editSalespersonForm.get('location').invalid &&
+            editSalespersonForm.get('location').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="editSalespersonForm.get('location').errors.required"
+          >
+            location is required
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="tel"
+          class="form-control"
+          placeholder="{{ editSalespersonForm.get('phone').value }}"
+          value="{{ editSalespersonForm.get('phone').value }}"
+          formControlName="phone"
+          maxlength="10"
+          [class.is-invalid]="
+            editSalespersonForm.get('phone').invalid &&
+            editSalespersonForm.get('phone').touched
+          "
+        />
+        <div
+          *ngIf="
+            editSalespersonForm.get('phone').invalid &&
+            editSalespersonForm.get('phone').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="editSalespersonForm.get('phone').errors.required"
+          >
+            phone is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="
+              editSalespersonForm.get('phone').errors.minlength ||
+              editSalespersonForm.get('phone').errors.pattern
+            "
+          >
+            phone must be 10 digits
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="{{ editSalespersonForm.get('email').value }}"
+          value="{{ editSalespersonForm.get('email').value }}"
+          formControlName="email"
+          [class.is-invalid]="
+            editSalespersonForm.get('email').invalid &&
+            editSalespersonForm.get('email').touched
+          "
+        />
+        <div
+          *ngIf="
+            editSalespersonForm.get('email').invalid &&
+            editSalespersonForm.get('email').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="editSalespersonForm.get('email').errors.required"
+          >
+            email is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="editSalespersonForm.get('email').errors.pattern"
+          >
+            please enter valid email
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="btn-toolbar col-auto ml-auto">
+        <div class="btn-group mr-3">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onSubmit()"
+            [disabled]="!editSalespersonForm.valid"
+          >
+            SUBMIT
+          </button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">
+            CANCEL
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

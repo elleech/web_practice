@@ -1,0 +1,262 @@
+<div class="alert alert-success text-center" *ngIf="submitted">
+  Success
+</div>
+
+<div class="alert alert-danger text-center" *ngIf="submitted === false">
+  {{ errorMessage.error }}
+</div>
+
+<div class="container">
+  <form [formGroup]="addEmployeeForm">
+    <div class="row">
+      <div class="form-group col">
+        <small class="text-info">
+          username cannot be altered once submitted
+        </small>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="username"
+          formControlName="username"
+          [class.is-invalid]="
+            addEmployeeForm.get('username').invalid &&
+            addEmployeeForm.get('username').touched
+          "
+        />
+        <div
+          *ngIf="
+            addEmployeeForm.get('username').invalid &&
+            addEmployeeForm.get('username').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('username').errors.required"
+          >
+            username is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('username').errors.minlength"
+          >
+            username must be at least 3 characters
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="firstname"
+          formControlName="firstname"
+          [class.is-invalid]="
+            addEmployeeForm.get('firstname').invalid &&
+            addEmployeeForm.get('firstname').touched
+          "
+        />
+        <div
+          *ngIf="
+            addEmployeeForm.get('firstname').invalid &&
+            addEmployeeForm.get('firstname').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('firstname').errors.required"
+          >
+            firstname is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('firstname').errors.pattern"
+          >
+            firstname must be letters only
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="lastname"
+          formControlName="lastname"
+          [class.is-invalid]="
+            addEmployeeForm.get('lastname').invalid &&
+            addEmployeeForm.get('lastname').touched
+          "
+        />
+        <div
+          *ngIf="
+            addEmployeeForm.get('lastname').invalid &&
+            addEmployeeForm.get('lastname').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('lastname').errors.required"
+          >
+            lastname is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('lastname').errors.pattern"
+          >
+            lastname must be letters only
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="job title"
+          formControlName="jobtitle"
+          [class.is-invalid]="
+            addEmployeeForm.get('jobtitle').invalid &&
+            addEmployeeForm.get('jobtitle').touched
+          "
+        />
+        <div
+          *ngIf="
+            addEmployeeForm.get('jobtitle').invalid &&
+            addEmployeeForm.get('jobtitle').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('jobtitle').errors.required"
+          >
+            job title is required
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="location"
+          formControlName="location"
+          [class.is-invalid]="
+            addEmployeeForm.get('location').invalid &&
+            addEmployeeForm.get('location').touched
+          "
+        />
+        <div
+          *ngIf="
+            addEmployeeForm.get('location').invalid &&
+            addEmployeeForm.get('location').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('location').errors.required"
+          >
+            location is required
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="tel"
+          class="form-control"
+          placeholder="phone"
+          formControlName="phone"
+          maxlength="10"
+          [class.is-invalid]="
+            addEmployeeForm.get('phone').invalid &&
+            addEmployeeForm.get('phone').touched
+          "
+        />
+        <div
+          *ngIf="
+            addEmployeeForm.get('phone').invalid &&
+            addEmployeeForm.get('phone').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('phone').errors.required"
+          >
+            phone is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="
+              addEmployeeForm.get('phone').errors.minlength ||
+              addEmployeeForm.get('phone').errors.pattern
+            "
+          >
+            phone must be 10 digits
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="email"
+          formControlName="email"
+          [class.is-invalid]="
+            addEmployeeForm.get('email').invalid &&
+            addEmployeeForm.get('email').touched
+          "
+        />
+        <div
+          *ngIf="
+            addEmployeeForm.get('email').invalid &&
+            addEmployeeForm.get('email').touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('email').errors.required"
+          >
+            email is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="addEmployeeForm.get('email').errors.pattern"
+          >
+            please enter valid email
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="btn-toolbar col-auto ml-auto">
+        <div class="btn-group mr-3">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onSubmit()"
+            [disabled]="!addEmployeeForm.valid"
+          >
+            SUBMIT
+          </button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">
+            CANCEL
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
