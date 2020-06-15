@@ -1,3 +1,17 @@
+# cs (customer_service)
+
+Frontend Angular App
+
+Frontend URL: [https://elleech.github.io/infsci2710-customer_service/reports](https://elleech.github.io/infsci2710-customer_service/reports)
+
+### Deployment
+
+- `ng add angular-cli-ghpages`
+
+- `ng deploy --base-href yourwebsite` (otherwise will show [blank page](https://github.community/t/angular-website-showing-blank-on-github-pages/10852))
+
+---
+
 # CsFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
