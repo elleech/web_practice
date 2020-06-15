@@ -4,6 +4,12 @@ A recreation of INFSCI 2710 final project using MEAN stack and Bootstrap
 
 [https://elleech.github.io/infsci2710-customer_service/reports](https://elleech.github.io/infsci2710-customer_service/reports)
 
+### ER Model
+
+![Image](images/er_model.png)
+
+### Web Pages Screenshot
+
 - **Report List**
 
   ![Image](images/localhost-4200-reports.png)
