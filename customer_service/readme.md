@@ -1,6 +1,8 @@
 ## customer_service
 
-A recreation of INFSCI 2710 final project using MEAN stack and Bootstrap
+- A recreation platform of INFSCI 2710 final project which lets customer service to create/update retail records and manage issue reports.
+
+- Built by using MEAN stack and Bootstrap.
 
 # [https://elleech.github.io/infsci2710-customer_service/reports](https://elleech.github.io/infsci2710-customer_service/reports)
 
