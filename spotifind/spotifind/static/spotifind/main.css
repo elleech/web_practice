@@ -1,0 +1,89 @@
+body {
+  background: #000000;
+  color: #fafafa;
+  margin-top: 5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fafafa;
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #222222;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.song-title {
+  color: #ffffff;
+}
+
+a.song-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.song-artist {
+  white-space: pre-line;
+}
+
+.song-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.song-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.song-metadata a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.song-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}

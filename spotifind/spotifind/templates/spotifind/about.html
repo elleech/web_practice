@@ -1,0 +1,63 @@
+{% extends "./share/base.html" %}
+{% load static %}
+{% block content %}
+  <div class="container mt-5">
+    <h2>About the site</h2>
+    <div class="row">
+      <div class="col-sm-8 col-xs-12">
+        <p>
+          When we listen to a song for the first time, we usually don't know the title or the artist. 
+          All we can remember is one or two catchy lyrics. 
+          The current Spotify search only supports searches on title, artist, album, and playlist. 
+          Therefore, we plan to implement lyrics search engine for Spotify. 
+          So in the future we can look up the tune that we hear in a shop or on a street, 
+          and add it to our Spotify playlist!
+        </p>
+        <p>
+          This website is for the final project of INFSCI 2140 Information Retrieval. 
+          We first use Genius API to get our target corpus in real-time. 
+          <span class="text-muted">
+            (Becuase everything is the free source of the Internet, it takes time to process.) 
+          </span>
+          In the meantime, we use Spotify API to search for the corresponding track, 
+          and store the song data from Genius and the url link from Spotify in the database. 
+          Finally, we perform index ranking based on the user query and show the top 10 songs for our user.
+        </p>
+        <p>
+          We use Django for the frontend, python for the backend, and MongoDB Atlas as our database.
+          The index library that we use is python whoosh. 
+          Our website logo (favicon) is a resource from the Internet. 
+          It is designed by 
+          <a href="https://glitch.com/@elamir.ammar" target="_blank">@elamir.ammar</a>.
+        </p>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <img src="{% static 'spotifind/flowchart.png' %}" alt="design flowchart" style="height:20rem;">
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h2>About the creators</h2>
+    <div class="row mt-4">
+      {% for author in authors %}
+        <div class="col-sm-2 col-xs-12">
+          {% if author.id == 1 %}
+            <a href="https://www.linkedin.com/in/ellee-ym-chen/" target="_blank">
+              <img src="{% static 'spotifind/linkedin_ellee chen.png' %}" alt="{{ author.name }}" style="height:10rem;border-radius:50%">
+            </a>
+          {% elif author.id == 2 %}
+            <a href="https://www.linkedin.com/in/xinmingliu/" target="_blank">
+              <img src="{% static 'spotifind/linkedin_xinming liu.jpg' %}" alt="{{ author.name }}" style="height:10rem;border-radius:50%">
+            </a>
+          {% endif %}
+        </div>
+        <div class="col-sm-4 col-xs-12 align-self-center">
+          <h4>{{ author.name }}</h4>
+          <h5><a class="text-muted" href="mailto:{{ author.email }}">{{ author.email }}</a></h5>
+          <p>as the {{ author.job }} developer</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}

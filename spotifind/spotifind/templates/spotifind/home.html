@@ -1,0 +1,53 @@
+{% extends "./share/base.html" %}
+{% load static %}
+{% block content %}
+  <div class="container text-center mt-5">
+    <h2>Wanna Find a Song?</h2>
+  </div>
+
+  <div class="container text-center mt-5">
+    <form method="GET">
+      <div class="text-center">
+        <p><input class="form-control" type="text" placeholder="Search by Lyrics" name="search" value="{{ form.search_url }}" maxlength="500" required></p>
+        <button type="submit" class="btn btn-outline-warning">Search</button>
+      </div>
+    </form>
+  </div>
+
+  {% if message == 'success' %}
+    <hr style="height:1px;background-color:darkgreen"></hr>
+    <div class="container mt-5 mb-3">
+      <h3>You're searching "{{ query }}": </h3>
+    </div>
+
+    <div class="container mt-5">
+    {% for song in songs %}
+      <div class="row mb-4">
+        <div class="col-auto my-auto">
+          <h4>{{ forloop.counter }}</h4>
+        </div>
+        <div class="col-auto my-auto">
+          <img src="{{ song.url_img }}" alt="{{ song.title }}" style="width:5rem">
+        </div>
+        <div class="col-auto my-auto">
+          <h4>
+            <a class="song-title" href="{% url 'spotifind-detail' song.docid %}" target="_blank">{{ song.title }}</a>
+            {% if song.url_spotify != null %}
+              <a href="{{ song.url_spotify }}" target="_blank">
+                <img src="{% static 'spotifind/spotify_play_button.png' %}" alt="spotify play" style="height:1.6rem;vertical-align:middle">
+              </a>
+            {% endif %}
+          </h4>
+          <p class="song-artist">{{ song.artist }}</p>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  {% elif message == 'error' %}
+    <hr style="height:1px;background-color:darkgreen"></hr>
+    <div class="container mt-5">
+      <h3>No songs can be found. Please try again.</h3>
+    </div>
+  {% endif %}
+
+{% endblock content %}
