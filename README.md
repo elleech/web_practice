@@ -4,7 +4,7 @@ Personal projects of building websites
 
 ### Django framework practice
 
-- [SpotiFind]()
+- [SpotiFind](https://github.com/elleech/web_practice/tree/master/spotifind)
 
 ### MEAN (MongoDB, Express.js, Angular, Node.js) stack practice
 
