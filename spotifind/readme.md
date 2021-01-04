@@ -8,90 +8,22 @@
 
 ### Web Pages Preview:
 
-- **Report List**
+- **About**
 
-  ![Image](images/localhost-4200-reports.png)
+  ![Image](images/page_about.png)
 
-- **Add New Report**
+- **Home**
 
-  ![Image](images/localhost-4200-reports-add.png)
+  ![Image](images/page_home.png)
 
-- **Edit One Report**
+- **Search Results**
 
-  ![Image](images/localhost-4200-reports-edit-rptId.png)
+  ![Image](images/page_search_results.png)
 
-- **Buy List**
+- **Result Song**
 
-  ![Image](images/localhost-4200-buys.png)
+  ![Image](images/page_song.png)
 
-- **Add New Buy**
+- **Result Song Spotify**
 
-  ![Image](images/localhost-4200-buys-add.png)
-
-- **Edit One Buy**
-
-  ![Image](images/localhost-4200-buys-edit-buyId.png)
-
-- **Product List**
-
-  ![Image](images/localhost-4200-products.png)
-
-- **Add New Product**
-
-  ![Image](images/localhost-4200-products-add.png)
-
-- **Edit One Product**
-
-  ![Image](images/localhost-4200-products-edit-pdtId.png)
-
-- **Lookup One Product**
-
-  ![Image](images/localhost-4200-products-lookup-pdtId.png)
-
-- **Customer List**
-
-  ![Image](images/localhost-4200-customers.png)
-
-- **Add New Customer**
-
-  ![Image](images/localhost-4200-customers-add.png)
-
-- **Edit One Customer**
-
-  ![Image](images/localhost-4200-customers-edit-custUsername.png)
-
-- **Lookup One Customer**
-
-  ![Image](images/localhost-4200-customers-lookup-custUsername.png)
-
-- **Salesperson List**
-
-  ![Image](images/localhost-4200-salespeople.png)
-
-- **Add New Salesperson**
-
-  ![Image](images/localhost-4200-salespeople-add.png)
-
-- **Edit One Salesperson**
-
-  ![Image](images/localhost-4200-salespeople-edit-saleUsername.png)
-
-- **Lookup One Salesperson**
-
-  ![Image](images/localhost-4200-salespeople-lookup-saleUsername.png)
-
-- **Employee List**
-
-  ![Image](images/localhost-4200-employees.png)
-
-- **Add New Employee**
-
-  ![Image](images/localhost-4200-employees-add.png)
-
-- **Edit One Employee**
-
-  ![Image](images/localhost-4200-employees-edit-emplUsername.png)
-
-- **Lookup One Employee**
-
-  ![Image](images/localhost-4200-employees-lookup-emplUsername.png)
+  ![Image](images/link_of_spotify.png)
