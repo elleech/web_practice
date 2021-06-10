@@ -2,28 +2,28 @@
 
 - The Spotify lyrics search engine of INFSCI 2140 final project.
 
-- Built by using Django and Bootstrap.
+- Built by using **_Django_** and **_Bootstrap_**.
 
 # View Here -> [https://infsci2140-fp-spotifind.herokuapp.com/](https://infsci2140-fp-spotifind.herokuapp.com/)
 
-### Web Pages Preview:
+### Website Pages Preview:
 
-- **About**
+- About
 
-  ![Image](images/page_about.png)
+  ![Image](_images/infsci2140-fp-spotifind-01_home.png)
 
-- **Home**
+- Home
 
-  ![Image](images/page_home.png)
+  ![Image](_images/infsci2140-fp-spotifind-02_about.png)
 
-- **Search Results**
+- Search Results
 
-  ![Image](images/page_search_results.png)
+  ![Image](_images/infsci2140-fp-spotifind-03_search.png)
 
-- **Result Song**
+- Result Song
 
-  ![Image](images/page_song.png)
+  ![Image](_images/infsci2140-fp-spotifind-04_song.png)
 
-- **Result Song Spotify**
+- Result Song Spotify Page
 
-  ![Image](images/link_of_spotify.png)
+  ![Image](_images/infsci2140-fp-spotifind-05_spotify.png)
