@@ -14,7 +14,7 @@
 
 ![Image](_images/infsci2710-customer_service-00_ermodel.png)
 
-### Web Pages Preview:
+### Website Pages Preview:
 
 - Report List
 
