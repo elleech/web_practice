@@ -2,7 +2,7 @@
 
 - A recreation platform of INFSCI 2710 final project which lets customer service to create/update retail records and manage issue reports.
 
-- Built by using MEAN stack and Bootstrap.
+- Built by using **_MEAN stack_** and **_Bootstrap_**.
 
 # View Here -> [https://elleech.github.io/infsci2710-customer_service/reports](https://elleech.github.io/infsci2710-customer_service/reports)
 
@@ -12,95 +12,94 @@
 
 ### ER Model:
 
-![Image](images/er_model.png)
+![Image](_images/infsci2710-customer_service-00_ermodel.png)
 
 ### Web Pages Preview:
 
-- **Report List**
+- Report List
 
-  ![Image](images/localhost-4200-reports.png)
+  ![Image](_images/infsci2710-customer_service-01_reports.png)
 
-- **Add New Report**
+  - Add New Report
 
-  ![Image](images/localhost-4200-reports-add.png)
+    ![Image](_images/infsci2710-customer_service-01a_add.png)
 
-- **Edit One Report**
+  - Edit One Report
 
-  ![Image](images/localhost-4200-reports-edit-rptId.png)
+    ![Image](_images/infsci2710-customer_service-01b_edit.png)
 
-- **Buy List**
+- Buy List
 
-  ![Image](images/localhost-4200-buys.png)
+  ![Image](_images/infsci2710-customer_service-02_buys.png)
 
-- **Add New Buy**
+  - Add New Buy
 
-  ![Image](images/localhost-4200-buys-add.png)
+    ![Image](_images/infsci2710-customer_service-02a_add.png)
 
-- **Edit One Buy**
+  - Edit One Buy
 
-  ![Image](images/localhost-4200-buys-edit-buyId.png)
+    ![Image](_images/infsci2710-customer_service-02b_edit.png)
 
-- **Product List**
+- Product List
 
-  ![Image](images/localhost-4200-products.png)
+  ![Image](_images/infsci2710-customer_service-03_products.png)
 
-- **Add New Product**
+  - Add New Product
 
-  ![Image](images/localhost-4200-products-add.png)
+    ![Image](_images/infsci2710-customer_service-03a_add.png)
 
-- **Edit One Product**
+  - Edit One Product
 
-  ![Image](images/localhost-4200-products-edit-pdtId.png)
+    ![Image](_images/infsci2710-customer_service-03b_edit.png)
 
-- **Lookup One Product**
+  - Lookup One Product
 
-  ![Image](images/localhost-4200-products-lookup-pdtId.png)
+    ![Image](_images/infsci2710-customer_service-03c_lookup.png)
 
-- **Customer List**
+- Customer List
 
-  ![Image](images/localhost-4200-customers.png)
+  ![Image](_images/infsci2710-customer_service-04_customers.png)
 
-- **Add New Customer**
+  - Add New Customer
 
-  ![Image](images/localhost-4200-customers-add.png)
+    ![Image](_images/infsci2710-customer_service-04a_add.png)
 
-- **Edit One Customer**
+  - Edit One Customer
 
-  ![Image](images/localhost-4200-customers-edit-custUsername.png)
+    ![Image](_images/infsci2710-customer_service-04b_edit.png)
 
-- **Lookup One Customer**
+  - Lookup One Customer
 
-  ![Image](images/localhost-4200-customers-lookup-custUsername.png)
+    ![Image](_images/infsci2710-customer_service-04c_lookup.png)
 
-- **Salesperson List**
+- Salesperson List
 
-  ![Image](images/localhost-4200-salespeople.png)
+  ![Image](_images/infsci2710-customer_service-05_salespeople.png)
 
-- **Add New Salesperson**
+  - Add New Salesperson
 
-  ![Image](images/localhost-4200-salespeople-add.png)
+    ![Image](_images/infsci2710-customer_service-05a_add.png)
 
-- **Edit One Salesperson**
+  - Edit One Salesperson
 
-  ![Image](images/localhost-4200-salespeople-edit-saleUsername.png)
+    ![Image](_images/infsci2710-customer_service-05b_edit.png)
 
-- **Lookup One Salesperson**
+  - Lookup One Salesperson
 
-  ![Image](images/localhost-4200-salespeople-lookup-saleUsername.png)
+    ![Image](_images/infsci2710-customer_service-05c_lookup.png)
 
-- **Employee List**
+- Employee List
 
-  ![Image](images/localhost-4200-employees.png)
+  ![Image](_images/infsci2710-customer_service-06_employees.png)
 
-- **Add New Employee**
+  - Add New Employee
 
-  ![Image](images/localhost-4200-employees-add.png)
+    ![Image](_images/infsci2710-customer_service-06a_add.png)
 
-- **Edit One Employee**
+  - Edit One Employee
 
-  ![Image](images/localhost-4200-employees-edit-emplUsername.png)
+    ![Image](_images/infsci2710-customer_service-06b_edit.png)
 
-- **Lookup One Employee**
+  - Lookup One Employee
 
-  ![Image](images/localhost-4200-employees-lookup-emplUsername.png)
-  
+    ![Image](_images/infsci2710-customer_service-06c_lookup.png)
