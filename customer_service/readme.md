@@ -1,6 +1,6 @@
 ## customer_service
 
-- A recreation platform of INFSCI 2710 final project which lets customer service to create/update retail records and manage issue reports.
+- A re-build platform of INFSCI 2710 final project which lets customer service to create/update retail records and manage issue reports.
 
 - Built by using **_MEAN stack_** and **_Bootstrap_**.
 
