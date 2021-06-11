@@ -68,9 +68,7 @@ _P.S. I don't own any photos inside the demo. They are resources from the Intern
 
   - Create Shipping Info
 
-    (account doesn't have shipping info when register.
-    
-    everyone needs to setup this to unlock purchase button)
+    (Account doesn't have shipping info when register. Everyone needs to set it up to unlock purchase button.)
 
     ![Image](_images/shopify-image_repository-04c_create_user.png)
 
