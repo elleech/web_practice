@@ -4,6 +4,8 @@
 
 - Built by using **_Django_** and **_Bootstrap_**.
 
+_P.S. I don't own some photos inside the demo. They are resources from the Internet._
+
 # View Here -> [https://infsci2140-fp-spotifind.herokuapp.com/](https://infsci2140-fp-spotifind.herokuapp.com/)
 
 ### Website Pages Preview:

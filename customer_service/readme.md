@@ -4,6 +4,8 @@
 
 - Built by using **_MEAN stack_** and **_Bootstrap_**.
 
+_P.S. I don't own any photos inside the demo. They are resources from the Internet._
+
 # View Here -> [https://elleech.github.io/infsci2710-customer_service/reports](https://elleech.github.io/infsci2710-customer_service/reports)
 
 ### Design Documentation:
