@@ -72,6 +72,8 @@ _P.S. I don't own any photos inside the demo. They are resources from the Intern
 
     ![Image](_images/shopify-image_repository-04c_create_user.png)
 
+    ![Image](_images/shopify-image_repository-04d_warning.png)
+
 - My Order
 
   ![Image](_images/shopify-image_repository-05_myorder.png)
