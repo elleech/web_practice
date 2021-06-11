@@ -10,9 +10,7 @@ _P.S. I don't own any photos inside the demo. They are resources from the Intern
 
 <!-- # View Here ->  -->
 
-### Design Documentation:
-
-[]()
+### Notes & Documentation: [doc-image_repository.pptx](https://github.com/elleech/web_practice/blob/master/image_repository/doc-image_repository.pptx)
 
 ### ER Model:
 
