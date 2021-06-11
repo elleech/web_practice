@@ -10,7 +10,7 @@ _P.S. I don't own any photos inside the demo. They are resources from the Intern
 
 ### Design Documentation:
 
-[https://github.com/elleech/web_practice/blob/master/customer_service/doc-customer_service.pptx](https://github.com/elleech/web_practice/blob/master/customer_service/doc-customer_service.pptx)
+[doc-customer_service.pptx](https://github.com/elleech/web_practice/blob/master/customer_service/doc-customer_service.pptx)
 
 ### ER Model:
 
