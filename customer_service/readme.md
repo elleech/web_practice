@@ -8,9 +8,7 @@ _P.S. I don't own any photos inside the demo. They are resources from the Intern
 
 # View Here -> [https://elleech.github.io/infsci2710-customer_service/reports](https://elleech.github.io/infsci2710-customer_service/reports)
 
-### Design Documentation:
-
-[doc-customer_service.pptx](https://github.com/elleech/web_practice/blob/master/customer_service/doc-customer_service.pptx)
+### Notes & Documentation: [doc-customer_service.pptx](https://github.com/elleech/web_practice/blob/master/customer_service/doc-customer_service.pptx)
 
 ### ER Model:
 
