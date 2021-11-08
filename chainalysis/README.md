@@ -6,6 +6,11 @@
 
 # View Here -> [https://elleech.github.io/chainalysis_oa/](https://elleech.github.io/chainalysis_oa/)
 
+```diff
+- The backend is deployed on Heroku. It sleeps after 30 minutes of inactivity.
+- If not seeing any data, please refresh the page a few times to wake it up. 😉
+```
+
 ### Website Pages Preview:
 
 ![Image](_images/chainalysis_oa-home.png)
